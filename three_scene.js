@@ -69,7 +69,7 @@
       new THREE.MeshStandardMaterial({ color: 0xF4F2FF, emissive: 0xBFA8FF, emissiveIntensity: 0.5, roughness: 0.25, metalness: 0.3 }));
     g.add(core);
     g.add(new THREE.Mesh(new THREE.SphereGeometry(3.8, 32, 32),
-      new THREE.MeshBasicMaterial({ color: 0x9B5DE5, transparent: true, opacity: 0.07 })));
+      new THREE.MeshBasicMaterial({ color: 0xE6DEFF, transparent: true, opacity: 0.1 })));
     var lab = textSprite('GRAVITY 2026', 0x9B5DE5, true); lab.position.set(0, 4.8, 0); g.add(lab);
 
     var SCHOOLS = [
@@ -90,7 +90,7 @@
         pts.push(new THREE.Vector3(Math.cos(a) * s.r, zz * Math.sin(s.inc), zz * Math.cos(s.inc)));
       }
       g.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts),
-        new THREE.LineBasicMaterial({ color: s.c, transparent: true, opacity: 0.13 })));
+        new THREE.LineBasicMaterial({ color: 0xFFFFFF, transparent: true, opacity: 0.32 })));
       sats.push({ h: h, a: Math.random() * 6.28, r: s.r, inc: s.inc, sp: s.sp });
     });
     return {
