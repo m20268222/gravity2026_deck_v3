@@ -149,10 +149,10 @@
     <div class="reveal d3 card calc">
       <div class="k">② 절감 시간 계산기</div>
       <h3 style="margin-top:6px">한 달에 몇 건 만드시나요</h3>
-      <input type="range" id="calcR" min="1" max="40" value="8" aria-label="월 제작 건수" />
-      <div style="font-size:clamp(12px,1vw,15px)">월 <b id="calcN" style="font-family:'Space Grotesk'">8</b>건 제작 시</div>
-      <div class="out" id="calcOut">약 22.7시간 절감</div>
-      <div class="out2">기존 3시간/건 → DeckFlip 약 10분/건 가정(예시). 실제 수치는 파일럿에서 측정해 채웁니다</div>
+      <input type="range" id="calcR" min="1" max="40" value="12" aria-label="월 제작 건수" />
+      <div style="font-size:clamp(12px,1vw,15px)">월 <b id="calcN" style="font-family:'Space Grotesk'">12</b>건 제작 시 (직장인 평균 월 12건)</div>
+      <div class="out" id="calcOut">약 26.6시간 절감</div>
+      <div class="out2">1건 평균 2시간 20분 — Nielsen·empower 조사(2020, 직장인 1,102명)의 주당 작업 7시간 ÷ 주당 제작 3건. DeckFlip은 1건 7분(자사 실측 5~7분)</div>
     </div>
     <div class="reveal d4 card">
       <div class="k">③ 발표 안의 발표</div>
@@ -161,8 +161,8 @@
       <div class="tag-live">이 안에서 실제 산출물이 그대로 돌아갑니다</div>
     </div>
   </div>
-  <div class="sfoot"><span class="src">계산기 가정치는 화면에 명시 · 실측값은 파일럿(예선 기간) 측정 후 반영</span><span>08</span></div>
-  <aside class="notes" hidden>투표를 한 번 직접 클릭. "지금은 기기 안에서 도는 초기 형태고, 본선에서는 여러분 휴대폰으로 직접 참여하는 모습을 보여드리겠습니다"라고 정직하게. 과장하면 Q&A에서 무너집니다. <b>60초</b></aside>
+  <div class="sfoot"><span class="src">출처: Nielsen·empower, The Ultimate Global PowerPoint Study (2020, n=1,102 · 독일/미국) — 주당 작업 7시간 · 주당 3건 · 서식에 37% / DeckFlip 생성 5~7분: 자사 실측 (2026.06)</span><span>08</span></div>
+  <aside class="notes" hidden>투표를 한 번 직접 클릭. "지금은 기기 안에서 도는 초기 형태고, 본선에서는 여러분 휴대폰으로 직접 참여하는 모습을 보여드리겠습니다"라고 정직하게. 계산기 근거를 물으면 — 닐슨 조사에서 직장인은 주 7시간 동안 3건을 만드니 1건에 약 2시간 20분, 우리 생성은 실측 5~7분이라고 답합니다. <b>60초</b></aside>
 </section>
 
 <!-- ━━━━━━━━ 9 · 작동 원리: 파이프라인 ━━━━━━━━ -->
@@ -421,6 +421,7 @@
     <div class="ref"><b>Gamma 지표</b> — Business Wire · TechCrunch, 2025.11 회사 발표: 사용자 7,000만 · ARR $100M · 기업가치 $2.1B <span class="rs">· p.14</span></div>
     <div class="ref"><b>Pitch 지표</b> — pitch.com · 언론 보도: 400만+ 팀, 누적 투자 $135M+ <span class="rs">· p.14, 15</span></div>
     <div class="ref"><b>외주 시장</b> — soomgo.com · kmong.com 공개 견적 데이터 (2026.06): 누적 견적 6.3만 건, 전문가 2.5만 명, 건당 5~20만 원, 2~3일 <span class="rs">· p.5, 17</span></div>
+    <div class="ref"><b>직장인 발표자료 제작 시간</b> — Nielsen·empower, The Ultimate Global PowerPoint Study (2020, n=1,102 · 독일/미국 50인 이상 기업): 주당 파워포인트 작업 7시간 · 주당 3건(월 12건) 제작 · 작업 시간의 37%가 서식. 1건 평균 140분은 7시간÷3건으로 산출 <span class="rs">· p.8</span></div>
     <div class="ref"><b>고등교육 재학생</b> — UNESCO (2024): 전 세계 2.69억 명 <span class="rs">· p.14</span></div>
     <div class="ref"><b>'HTML is the new markdown'</b> — A. Karpathy · Anthropic 엔지니어 공개 발언, 2026.05 <span class="rs">· p.14</span></div>
     <div class="ref"><b>생성 원가</b> — 자사 API 실측, 클로드 오푸스 4.8 기준 건당 $1~1.5 <span class="rs">· p.16, 17</span></div>

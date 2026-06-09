@@ -235,7 +235,8 @@
     if (!rng) return;
     var n = +rng.value;
     document.getElementById('calcN').textContent = n;
-    var saved = (n * (180 - 10)) / 60; // 평소 3시간/건 → 10분/건 가정 (가정임을 화면에 명시)
+    // 1건 140분: Nielsen·empower 2020 (주당 작업 7시간 ÷ 주당 3건) · DeckFlip 7분: 자사 실측 5~7분 상단
+    var saved = (n * (140 - 7)) / 60;
     document.getElementById('calcOut').textContent = '약 ' + saved.toFixed(1) + '시간 절감';
   }
   if (rng) { rng.addEventListener('input', calc); calc(); }
