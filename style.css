@@ -81,7 +81,8 @@ a:hover{text-decoration:underline}
   scroll-snap-type:y mandatory;scroll-behavior:smooth}
 .slide{min-height:100vh;min-height:100dvh;scroll-snap-align:start;scroll-snap-stop:always;
   display:flex;flex-direction:column;justify-content:center;
-  padding:var(--pad);position:relative;overflow:hidden}
+  padding:var(--pad);position:relative;overflow:hidden;
+  isolation:isolate}  /* 워터마크(z-index:-1)가 인쇄용 슬라이드 배경 뒤로 빠지지 않게 */
 .shead{display:flex;justify-content:space-between;align-items:baseline;gap:18px;margin-bottom:clamp(10px,2.2vh,26px)}
 .eyebrow{font-family:"Space Grotesk","Pretendard",sans-serif;letter-spacing:.28em;text-transform:uppercase;
   font-size:var(--fs-cap);color:var(--cyan);font-weight:600}
@@ -97,7 +98,12 @@ a:hover{text-decoration:underline}
 .gold-text{color:var(--gold)}
 .watermark{position:absolute;right:3.5vw;top:50%;transform:translateY(-50%);
   font-family:"Space Grotesk",sans-serif;font-size:min(46vh,520px);font-weight:700;line-height:1;
-  color:transparent;-webkit-text-stroke:1.5px rgba(124,58,237,.13);z-index:-1;user-select:none;pointer-events:none}
+  color:rgba(255,255,255,.035);-webkit-text-stroke:1.5px rgba(214,225,255,.24);
+  z-index:-1;user-select:none;pointer-events:none}
+/* 인쇄(PDF) 전용 워터마크 — script.js initAll()이 생성, 화면에서는 숨김 */
+.watermark-print{display:none;position:absolute;right:3.5vw;top:50%;transform:translateY(-50%);
+  font-family:"Space Grotesk",sans-serif;font-size:min(46vh,520px);font-weight:700;line-height:1;
+  color:rgba(214,225,255,.13);user-select:none;pointer-events:none}
 
 /* reveal 애니메이션 */
 .reveal{opacity:0;transform:translateY(26px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
@@ -366,6 +372,10 @@ body.help-on #helpov{display:flex}
       radial-gradient(90% 80% at 8% 100%,rgba(45,108,223,.10),transparent 50%),
       var(--bg)}
   .appendix-gate{display:flex!important}
+  /* PDF 엔진이 기존 워터마크 요소를 누락시키는 문제 우회:
+     원본은 숨기고, initAll()이 만들어 둔 인쇄용 복제본(.watermark-print)을 쓴다 */
+  .watermark{display:none!important}
+  .watermark-print{display:block!important}
   .reveal{opacity:1!important;transform:none!important}
   .liveframe-wrap{display:none}
   .live-fallback{display:block!important}

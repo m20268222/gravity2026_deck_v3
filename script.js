@@ -258,6 +258,15 @@
   /* ---------- 인쇄/Headless 강제 init (파이프라인 STEP 7 필수 훅) ---------- */
   function initAll() {
     document.body.classList.add('show-appendix');
+    // PDF 엔진이 기존 .watermark를 누락시키는 문제 우회 — 인쇄용 복제본 생성
+    document.querySelectorAll('.watermark').forEach(function (w) {
+      if (w.dataset.printClone) return;
+      w.dataset.printClone = '1';
+      var c = document.createElement('div');
+      c.className = 'watermark-print';
+      c.textContent = w.textContent;
+      w.parentElement.appendChild(c);
+    });
     allSlides.forEach(function (s) {
       s.querySelectorAll('.reveal').forEach(function (r) { r.classList.add('in'); });
     });
